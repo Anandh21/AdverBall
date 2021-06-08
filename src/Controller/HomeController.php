@@ -15,5 +15,10 @@ class HomeController extends  AbstractController
     {
         return  $this->render('pages/home.html.twig');
     }
+    #[Route('/game')]
+    public function game()
+    {
+        return $this->render('pages/game.html.twig');
+    }
 
 }
