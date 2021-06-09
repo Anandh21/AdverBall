@@ -210,36 +210,36 @@ function moveBall(el, et) {
             if ((direction == "right")&&(endLeft < 362)) {
                 // increase the score and indicate it on the score board
                 incrementScore();
-                if (chanceCount < 4) {modalElem5.setAttribute("class","modal active");}
+                if (chanceCount < 4) {modalElem5.setAttribute("class","pop-up active");}
                 else {
-                    if (score > 4) {modalElem7.setAttribute("class","modal active");}
+                    if (score > 4) {modalElem7.setAttribute("class","pop-up active");}
                     else {modalElem6.innerHTML = "You scored " + score + " goal(s) out of 5. Click to try again";
-                        modalElem6.setAttribute("class","modal active");}
+                        modalElem6.setAttribute("class","pop-up active");}
                 }
             }
             else if ((direction == "left")&&(endLeft >= 362)) {
                 // increase the score and indicate it on the score board
                 incrementScore();
-                if (chanceCount < 4) {modalElem5.setAttribute("class","modal active");}
+                if (chanceCount < 4) {modalElem5.setAttribute("class","pop-up active");}
                 else {
-                    if (score > 4) {modalElem7.setAttribute("class","modal active");}
+                    if (score > 4) {modalElem7.setAttribute("class","pop-up active");}
                     else {modalElem6.innerHTML = "You scored " + score + " goal(s) out of 5. Click to try again";
-                        modalElem6.setAttribute("class","modal active");}
+                        modalElem6.setAttribute("class","pop-up active");}
                 }
             }
             else {
-                if (chanceCount < 4) {modalElem4.setAttribute("class","modal active");}
+                if (chanceCount < 4) {modalElem4.setAttribute("class","pop-up active");}
                 else {
                     modalElem6.innerHTML = "You scored " + score + " goal(s) out of 5. Click to try again";
-                    modalElem6.setAttribute("class","modal active");
+                    modalElem6.setAttribute("class","pop-up active");
                 }
             }
         }
         else {
-            if (chanceCount < 4) {modalElem4.setAttribute("class","modal active");}
+            if (chanceCount < 4) {modalElem4.setAttribute("class","pop-up active");}
             else {
                 modalElem6.innerHTML = "You scored " + score + " goal(s) out of 5. Click to try again";
-                modalElem6.setAttribute("class","modal active");
+                modalElem6.setAttribute("class","pop-up active");
             }
         }
     }
@@ -389,10 +389,10 @@ function kickingProcess() {
             document.getElementById('score-board').getElementsByTagName('li')[3].setAttribute('class', '');
             document.getElementById('score-board').getElementsByTagName('li')[4].setAttribute('class', '');
         }
-        modalElem4.setAttribute("class","modal");
-        modalElem5.setAttribute("class","modal");
-        modalElem6.setAttribute('class','modal');
-        modalElem7.setAttribute('class','modal');
+        modalElem4.setAttribute("class","pop-up");
+        modalElem5.setAttribute("class","pop-up");
+        modalElem6.setAttribute('class','pop-up');
+        modalElem7.setAttribute('class','pop-up');
         refreshScene();
     }
 }

@@ -207,9 +207,9 @@ body {
     display: none;
 }
 
-/* modals */
+/* pop-ups */
 
-.modal {
+.pop-up {
     position: absolute;
     top: -475px;
     left: 239px;
@@ -239,7 +239,7 @@ body {
     font: 25px sans-serif;
 }
 
-.modal.active {
+.pop-up.active {
     top: 232px;
 }
 
