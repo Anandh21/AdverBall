@@ -14,7 +14,7 @@ class UserType extends AbstractType
     {
         $builder
             ->add('email', null, [
-                    'label'=>'f'
+                    'label'=>'email'
                 ])
 
             ->add('nbBalls',HiddenType::class, [
