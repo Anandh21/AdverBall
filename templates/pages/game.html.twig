@@ -1,4 +1,5 @@
 {% extends 'base.html.twig' %}
+
 {% block head %}
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -20,13 +21,13 @@
 {% endblock %}
 
 {% block body %}
-
+    {% include('components/navbar.html.twig') %}
     <!--[if lt IE 7]>
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-
+    {% include('components/returnhome.html.twig') %}
     <div id="zee-game">
-
+    
         <!-- game objects -->
         <div class="goal-keeper standing" id="goal-keeper-state-1"></div>
         <div class="goal-keeper left-jump" id="goal-keeper-state-2"></div>
@@ -62,7 +63,14 @@
         </ul>
 
     </div>
-
+    <footer class="footer">
+        <div class="footer-one">
+            <img src="../images/coca.svg" class="logo"></img>
+        </div>
+        <div class="footer-deux">
+            <p>Game by Adverball's Team</p>
+        </div>
+    </footer>
     <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script> -->
 
