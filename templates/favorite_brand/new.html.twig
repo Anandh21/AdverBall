@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New FavoriteBrand{% endblock %}
+
+{% block body %}
+    <h1>Create new FavoriteBrand</h1>
+
+    {{ include('favorite_brand/_form.html.twig') }}
+
+    <a href="{{ path('favorite_brand_index') }}">back to list</a>
+{% endblock %}
