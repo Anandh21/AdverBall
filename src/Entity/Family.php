@@ -21,7 +21,7 @@ class Family
 
 
     /**
-     * @ORM\ManyToOne(targetEntity=socialCategory::class)
+     * @ORM\ManyToOne(targetEntity=SocialCategory::class)
      * @ORM\JoinColumn(nullable=false)
      */
     private $socialCategory;
@@ -37,7 +37,7 @@ class Family
     private $qtl;
 
     /**
-     * @ORM\OneToOne(targetEntity=user::class, cascade={"persist", "remove"})
+     * @ORM\OneToOne(targetEntity=User::class, cascade={"persist", "remove"})
      * @ORM\JoinColumn(nullable=false)
      */
     private $idUser;

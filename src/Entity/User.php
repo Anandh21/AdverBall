@@ -25,7 +25,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private $email;
 
     /**
-     * @ORM\Column(type="json")
+     * @ORM\Column(type="json", nullable=true)
+     *
      */
     private $roles = [];
 
@@ -59,6 +60,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @ORM\Column(type="smallint")
      */
     private $qtl;
+
+    /**
+     * @ORM\Column(type="smallint", nullable=true)
+     */
+    private $nbBalls;
 
 
 
@@ -206,6 +212,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setQtl(int $qtl): self
     {
         $this->qtl = $qtl;
+
+        return $this;
+    }
+
+    public function getNbBalls(): ?int
+    {
+        return $this->nbBalls;
+    }
+
+    public function setNbBalls(?int $nbBalls): self
+    {
+        $this->nbBalls = $nbBalls;
 
         return $this;
     }

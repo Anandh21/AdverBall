@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}FavoriteBrand index{% endblock %}
+
+{% block body %}
+    <h1>FavoriteBrand index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for favorite_brand in favorite_brands %}
+            <tr>
+                <td>{{ favorite_brand.id }}</td>
+                <td>
+                    <a href="{{ path('favorite_brand_show', {'id': favorite_brand.id}) }}">show</a>
+                    <a href="{{ path('favorite_brand_edit', {'id': favorite_brand.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="2">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('favorite_brand_new') }}">Create new</a>
+{% endblock %}
