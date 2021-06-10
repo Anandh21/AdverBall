@@ -27,19 +27,16 @@ class FamilyController extends AbstractController
     {
         $family = new Family();
         $family->setIdUser($this->getUser());
+        $user->setNbBalls(6);
         $form = $this->createForm(FamilyType::class, $family);
 
         $form->handleRequest($request);
-
-        //$user_id = $user->getId();
-
-
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($family);
             $entityManager->flush();
 
-            return $this->redirectToRoute('family_index');
+            return $this->redirectToRoute('info');
         }
 
         return $this->render('family/new.html.twig', [
@@ -64,10 +61,8 @@ class FamilyController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
-
             return $this->redirectToRoute('family_index');
         }
-
         return $this->render('family/edit.html.twig', [
             'family' => $family,
             'form' => $form->createView(),
@@ -82,7 +77,6 @@ class FamilyController extends AbstractController
             $entityManager->remove($family);
             $entityManager->flush();
         }
-
         return $this->redirectToRoute('family_index');
     }
 }

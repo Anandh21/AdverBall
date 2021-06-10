@@ -1,11 +1,27 @@
+
+
+
+
 {% extends 'base.html.twig' %}
-
-{% block title %}New FavoriteBrand{% endblock %}
-
 {% block body %}
-    <h1>Create new FavoriteBrand</h1>
+    <div>
 
-    {{ include('favorite_brand/_form.html.twig') }}
+        <div class="first">
+            <div class="one">
+                <img src="{{ asset('images/coca.jpg')}}" alt="coca-foot" class="img-cadeaux">
+            </div>
+            <div class="two">
+                <div class="titre">
+                    <h1>Joue et tente de gagner des lots ! </h1>
+                </div>
 
-    <a href="{{ path('favorite_brand_index') }}">back to list</a>
+                {{ include('favorite_brand/_form.html.twig') }}
+
+            </div>
+
+        </div>
+
+
+    </div>
+
 {% endblock %}

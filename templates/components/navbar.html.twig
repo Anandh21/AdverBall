@@ -1,11 +1,24 @@
 <nav class="navbar fixed-top navbar-expand-lg navbar-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/">
-        <img src="../images/coca.svg" class="logo"></img>
-    </a>
-      <div class="d-flex">
+    {% if app.user %}
+      <a class="navbar-brand" href="/info">
+        <img src="{{ asset('images/coca.svg') }}" class="logo"></img>
+      </a>
+    {% else %}
+      <a class="navbar-brand" href="/">
+        <img src="{{ asset('images/coca.svg') }}" class="logo"></img>
+      </a>
+    {% endif %}
+
+    <div class="d-flex">
+      {% if app.user %}
+
+      {% else %}
         <a class="btn btn-outline-success button" href="{{ path('app_login') }}">Se connecter</a>
-      </div>
+      {% endif %}
+
+
     </div>
+  </div>
   </div>
 </nav>
