@@ -21,27 +21,30 @@ class UserType extends AbstractType
             ->add('nbBalls',HiddenType::class, [
                 'data' => 2,
             ])
-            ->add('password')
+            ->add('password', null, [
+                'label'=>'Mot de passe'
+            ])
             ->add('firstName', null,[
-                'label'=> 'FirstName'
+                'label'=> 'Prénom'
             ])
             ->add('lastName',null,[
-                'label'=> 'LastName'
+                'label'=> 'Nom'
             ])
             ->add('age', null,[
                 'attr' => array('style' => 'width: 200px')
             ])
             ->add('gender', ChoiceType::class,[
+                'label'=> 'Genre',
                 'choices'=>[
-                    'Homme'=>'Male',
-                    'Femme'=>'Female',
-                    'Other' =>'Other'
+                    'Homme'=>'Homme',
+                    'Femme'=>'Femme',
+                    'Other' =>'Autre'
                 ],
                 'attr' => array('style' => 'width: 100%')
 
             ])
             ->add('qtl',null,[
-                'label'=> 'Consommation '
+                'label'=> 'Consommation (en litres par mois et par personne) '
             ])
         ;
     }
