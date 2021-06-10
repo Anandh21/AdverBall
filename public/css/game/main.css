@@ -68,6 +68,7 @@ html {
 body {
     background: #000;
     height: 100%;
+    padding-top: 50px;
 }
 
 #zee-ball {
@@ -90,13 +91,13 @@ body {
     width: 810px;
     height: 525px;
     position: relative;
-    background: url('../../images/game/background.jpg') no-repeat top center transparent;
+    background: url('../../images/game/stade6.jpg') no-repeat top center transparent;
     cursor: pointer;
     overflow: hidden;
 
     /* center vertically on the screen */
     top: 50%;
-    margin-top: -262.5px;
+    margin-top: -333.5px;
 }
 
 #vertical-direction {
@@ -194,16 +195,16 @@ body {
 }
 
 .goal-keeper.standing {
-    background: url('../../images/game/keeper-standing.png') no-repeat 0 0 transparent;
+    background: url('../../images/game/keeper-standing1.png') no-repeat 0 0 transparent;
 }
 
 .goal-keeper.right-jump {
-    background: url('../../images/game/keeper-right-jump.png') no-repeat 0 0 transparent;
+    background: url('../../images/game/coca-droite.png') no-repeat 0 0 transparent;
     display: none;
 }
 
 .goal-keeper.left-jump {
-    background: url('../../images/game/keeper-left-jump.png') no-repeat 0 0 transparent;
+    background: url('../../images/game/coca-gauche1.png') no-repeat 0 0 transparent;
     display: none;
 }
 
