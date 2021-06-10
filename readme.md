@@ -15,4 +15,4 @@ symfony consoles doctrine:migrations:migrate
 
 ###Seeding
 symfony console doctrine:fixtures:load
-#participants: Anandh,Inès, Thibaut, Peggy et salwa
+
