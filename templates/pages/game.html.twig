@@ -22,6 +22,7 @@
 
 {% block body %}
     {% include('components/navbar.html.twig') %}
+
     <!--[if lt IE 7]>
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -43,7 +44,7 @@
         <div id="modal-5" class="pop-up">Goal!</div> 
         <div id="modal-6" class="pop-up">Go on, give it another shot</div>
         <div id="modal-7" class="pop-up">Congrats! You won!</div>
-        <input type="hidden" value="5" id="nbTir">
+        <input type="hidden" value="{{ nbBalls }}" id="nbTir">
 
         <!-- control meters -->
         <div id="vertical-direction"></div>
@@ -55,11 +56,11 @@
 
         <!-- scoring -->
         <ul id="score-board">
+            {% for i in 1..nbBalls %}
             <li><img src="{{ asset('images/game/zee-ball.png') }}" width="32" height="32"></li>
-            <li><img src="{{ asset('images/game/zee-ball.png') }}" width="32" height="32"></li>
-            <li><img src="{{ asset('images/game/zee-ball.png') }}" width="32" height="32"></li>
-            <li><img src="{{ asset('images/game/zee-ball.png') }}" width="32" height="32"></li>
-            <li><img src="{{ asset('images/game/zee-ball.png') }}" width="32" height="32"></li>
+
+            {% endfor %}
+
         </ul>
 
     </div>

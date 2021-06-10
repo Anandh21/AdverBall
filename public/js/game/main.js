@@ -51,7 +51,8 @@ var powerBallStopped = false;
 var x1, x2, x3;
 var nbTir= document.getElementById("nbTir").value;
 console.log(nbTir);
-var chanceCount = 5;
+
+var chanceCount = nbTir;
 // recording the direction of the jump by the player, goal or not and the end co-ordinates of the ball
 var direction;
 var endTop = 440;
@@ -212,10 +213,10 @@ function moveBall(el, et) {
             if ((direction == "right")&&(endLeft < 362)) {
                 // increase the score and indicate it on the score board
                 incrementScore();
-                if (chanceCount > 0) {modalElem5.setAttribute("class","pop-up active");}
+                if (chanceCount >= 0) {modalElem5.setAttribute("class","pop-up active");}
                 else {
                     if (score > 4) {modalElem7.setAttribute("class","pop-up active");}
-                    else {modalElem6.innerHTML = "You scored " + score + " goal(s) out of 5. Click to try again";
+                    else {modalElem6.innerHTML = "Votre " + score + " but(s) sur" + nbTir +".A";
                         modalElem6.setAttribute("class","pop-up active");}
                 }
             }
@@ -225,17 +226,17 @@ function moveBall(el, et) {
                 
                 // increase the score and indicate it on the score board
                 incrementScore();
-                if (chanceCount > 0)  {modalElem5.setAttribute("class","pop-up active");}
+                if (chanceCount >= 0)  {modalElem5.setAttribute("class","pop-up active");}
                 else {
                     if (score > 4) {modalElem7.setAttribute("class","pop-up active");}
-                    else {modalElem6.innerHTML = "You scored " + score + " goal(s) out of 5. Click to try again";
+                    else {modalElem6.innerHTML = "Votre " + score + " but(s) sur" + nbTir +".B";
                         modalElem6.setAttribute("class","pop-up active");}
                 }
             }
             else {
-                if (chanceCount > 0) {modalElem4.setAttribute("class","pop-up active");}
+                if (chanceCount >= 0) {modalElem4.setAttribute("class","pop-up active");}
                 else {
-                    modalElem6.innerHTML = "You scored " + score + " goal(s) out of 5. Click to try again";
+                    modalElem6.innerHTML = "Votre " + score + " but(s) sur" + nbTir +".C";
                     modalElem6.setAttribute("class","pop-up active");
                 }
             }
@@ -243,7 +244,7 @@ function moveBall(el, et) {
         else {
             if (chanceCount > 0) {modalElem4.setAttribute("class","pop-up active");}
             else {
-                modalElem6.innerHTML = "You scored " + score + " goal(s) out of 5. Click to try again";
+                modalElem6.innerHTML = "Votre " + score + " but(s) sur " + nbTir +".D";
                 modalElem6.setAttribute("class","pop-up active");
             }
         }
