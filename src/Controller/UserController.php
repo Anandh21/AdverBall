@@ -8,6 +8,7 @@ use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
 #[Route('/user')]
@@ -22,7 +23,7 @@ class UserController extends AbstractController
     }
 
     #[Route('/new', name: 'user_new', methods: ['GET', 'POST'])]
-    public function new(Request $request): Response
+    public function new(Request $request, UserPasswordHasherInterface $passwordhasher): Response
     {
         $user = new User();
         $form = $this->createForm(UserType::class, $user);
@@ -30,6 +31,9 @@ class UserController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
+            //entre la récupération des champs pour faire le nouveau User et sa sauvegarde (persist), on hashe le mot de passe
+            $plainpass = $user->getPassword();
+            $user->setPassword($passwordhasher->hashPassword($user, $plainpass));
             $entityManager->persist($user);
             $entityManager->flush();
 
@@ -51,12 +55,14 @@ class UserController extends AbstractController
     }
 
     #[Route('/{id}/edit', name: 'user_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, User $user): Response
+    public function edit(Request $request, User $user, UserPasswordHasherInterface $passwordhasher): Response
     {
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $plainpass = $user->getPassword();
+            $user->setPassword($passwordhasher->hashPassword($user, $plainpass));
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('user_index');
