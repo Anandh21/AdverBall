@@ -13,7 +13,7 @@ class UserFixtures extends Fixture
     public function __construct(UserPasswordHasherInterface $passwordhasher){
         $this->passwordhasher = $passwordhasher;
     }
-    public function load(ObjectManager $manager, )
+    public function load(ObjectManager $manager )
     {
         $user = new User();
         $user->setEmail('admin@admin.fr');

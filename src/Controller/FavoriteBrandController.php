@@ -25,6 +25,7 @@ class FavoriteBrandController extends AbstractController
     public function new(Request $request): Response
     {
         $favoriteBrand = new FavoriteBrand();
+        $favoriteBrand ->setIdUser($this->getUser());
         $form = $this->createForm(FavoriteBrandType::class, $favoriteBrand);
         $form->handleRequest($request);
 

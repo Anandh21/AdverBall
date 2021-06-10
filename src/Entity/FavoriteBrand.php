@@ -18,13 +18,13 @@ class FavoriteBrand
     private $id;
 
     /**
-     * @ORM\OneToOne(targetEntity=user::class, cascade={"persist", "remove"})
+     * @ORM\OneToOne(targetEntity=User::class, cascade={"persist", "remove"})
      * @ORM\JoinColumn(nullable=false)
      */
     private $idUser;
 
     /**
-     * @ORM\OneToOne(targetEntity=brand::class, cascade={"persist", "remove"})
+     * @ORM\OneToOne(targetEntity=Brand::class, cascade={"persist", "remove"})
      * @ORM\JoinColumn(nullable=false)
      */
     private $firstFav;
