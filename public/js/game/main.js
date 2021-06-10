@@ -372,6 +372,7 @@ function stopPowerBallAndKick() {
 }
 
 function kickingProcess() {
+    
     if ((verticalBallStopped == false) && (horizontalBallStopped == false) && (powerBallStopped == false)) {
         stopVerticalBall();
     }
