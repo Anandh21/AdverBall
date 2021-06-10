@@ -244,7 +244,7 @@ function moveBall(el, et) {
         else {
             if (chanceCount > 0) {modalElem4.setAttribute("class","pop-up active");}
             else {
-                modalElem6.innerHTML = "Votre " + score + " but(s) sur " + nbTir +".D";
+                modalElem6.innerHTML = "Votre " + score + " but(s) sur " + nbTir +'.<br>'+ "<a href='/info'>Try again</a>";
                 modalElem6.setAttribute("class","pop-up active");
             }
         }
@@ -403,7 +403,6 @@ function kickingProcess() {
         refreshScene();
     }
 }
-
 function incrementScore() {
     if ((chanceCount == 0)) {
         document.getElementById('score-board').getElementsByTagName('li')[0].setAttribute('class', 'scored');

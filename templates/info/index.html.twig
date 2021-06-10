@@ -9,6 +9,7 @@
 </style>
 
 <div class="example-wrapper">
+
     <h1>Bienvenue {{ firstName }}</h1>
 
     <p>
@@ -26,6 +27,19 @@
         <li>
             si vous êtes déjà inscrit(e) votre nombre de ballon s'affiche ici : {{ nbBalls }}
         </li>
+
+        <li>
+            <p>Gagnez des ballons en plus en répondant à des questions sur vos boissons préferés </p>
+            <a href="{{ path('favorite_brand_new') }}" class="btn btns offset-4 col-4 text-center" > Gagner deux ballons en plus </a>
+        </li>
+        <li>
+            <p>Gagnez des ballons en plus en répondant à des questions concernant la consommation de votre famille </p>
+            <a href="{{ path('family_new') }}" class="btn btns offset-4 col-4 text-center"> Gagner deux ballons en plus </a>
+        </li>
+
+
+
+
         <li>
             comment jouer ? c'est tres simple suivez le plan si dessous :
         </li>
@@ -56,5 +70,11 @@
             le terme des lots à gagner reste à déterminer à ce stade du projets.
         </li>
     </ul>
+    <div>
+        <a href="{{ path('game') }}"class="btn btns offset-4 col-4 text-center">À vous de jouer</a>
+    </div>
+
+
+
 </div>
 {% endblock %}

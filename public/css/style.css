@@ -115,9 +115,17 @@ select{
 
 .return{
     padding-left: 250px;
-    
 
 }
+.btns:hover{
+    border-color: #F70000!important;
+    background-color: white !important;
+    color: #F70000 !important; }
+.btns{
+    background-color: #F70000 !important;
+    border-color: #F70000!important;
+    color: white!important;
+    margin-bottom: 10px; }
 
 
 
