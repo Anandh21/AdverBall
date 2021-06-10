@@ -3,6 +3,9 @@
 namespace App\Form;
 
 use App\Entity\Family;
+use App\Entity\SocialCategory;
+use App\Entity\User;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -14,8 +17,13 @@ class FamilyType extends AbstractType
         $builder
             ->add('numberMember')
             ->add('qtl')
-            ->add('socialCategory')
-            ->add('idUser')
+            ->add('socialCategory', EntityType::class,[
+                'class'=>SocialCategory::class,
+                'choice_label'=> 'label'
+            ])
+           /* ->add('idUser', EntityType::class, [
+                "class" => User::class,
+            ])*/
         ;
     }
 
