@@ -15,14 +15,17 @@ class FavoriteBrandType extends AbstractType
     {
         $builder
             ->add('firstFav',EntityType::class,[
+                'label'=>'Premier choix',
                 'class'=>Brand::class,
                 'choice_label'=>'label'
             ])
             ->add('secondFav',EntityType::class,[
+                'label'=>'Second choix',
                 'class'=>Brand::class,
                 'choice_label'=>'label'
             ])
             ->add('thirdFav',EntityType::class,[
+                'label'=>'Troisième choix',
                 'class'=>Brand::class,
                 'choice_label'=>'label'
             ])
