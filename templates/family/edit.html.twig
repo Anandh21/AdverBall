@@ -3,11 +3,11 @@
 {% block title %}Edit Family{% endblock %}
 
 {% block body %}
-    <h1>Edit Family</h1>
+    <h1>Modifier la famille</h1>
 
     {{ include('family/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('family_index') }}">back to list</a>
+    <a href="{{ path('family_index') }}">Retour à la liste</a>
 
     {{ include('family/_delete_form.html.twig') }}
 {% endblock %}

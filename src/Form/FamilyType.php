@@ -15,8 +15,13 @@ class FamilyType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('numberMember')
-            ->add('qtl')
+            ->add('numberMember', null, [
+                'label'=>'Nombre de membres dans la famille'
+            ])
+            ->add('qtl', null, [
+                'label'=>'Quantité bu en litres au sein de la famille'
+            ])
+                     
             ->add('socialCategory', EntityType::class,[
                 'class'=>SocialCategory::class,
                 'choice_label'=> 'label'
